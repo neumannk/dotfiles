@@ -2,18 +2,16 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/kevin/.oh-my-zsh"
-
-ZSH_THEME="robbyrussell"
+case "$(uname -s)" in
+    Darwin) export ZSH="/Users/$USER/.oh-my-zsh";;
+    Linux)  export ZSH="/home/$USER/.oh-my-zsh";;
+esac
 
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -29,11 +27,12 @@ HYPHEN_INSENSITIVE="true"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+
 # Sublime plugin:
 # st: open Sublime Text, optionally with a given file or directory
 # stt: open Sublime Text on the current directory.
 # sst: if sudo is available, open Sublime Text with root permissions
-plugins=(aws sublime sudo )
+plugins=(sublime sudo git colored-man-pages shrink-path )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -44,8 +43,7 @@ else
   export EDITOR='nano'
 fi
 
-# Source all the files in ~/.zshrc.d (both hidden and normal), and do nothing if
-# the folder doesn't exist or is empty.
-for file in ~/.zshrc.d/*(N) ~/.zshrc.d/.[^.]*(N); do
+# Source all the files in ~/.zshrc.d.
+for file in $(find ~/.zshrc.d/**/*.zsh -type f); do
     source "$file"
 done
