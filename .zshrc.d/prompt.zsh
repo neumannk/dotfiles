@@ -2,7 +2,7 @@
 # hostname
 ###########################################################
 PROMPT_HOST=$(hostname)
-for file in $(find ~/.zshrc.d/**/hostname-overrides.csv); do
+for file in $(find ~/.zshrc.d/**/ -name hostname-overrides.csv); do
     PROMPT_HOST_OVERRIDE=$(awk -F, -v host="$PROMPT_HOST" '$1 == host { print $2; exit }' "$file")
 done
 PROMPT_HOST="${PROMPT_HOST_OVERRIDE:-"$PROMPT_HOST"}"
