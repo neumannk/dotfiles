@@ -1,0 +1,1 @@
+Files in this directory and subdirectories are ignored by git. In practice, this is a good place for machine-specific or domain-specific configs. This is also a good place for a `hostname-overrides.csv` file.

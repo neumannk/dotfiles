@@ -1,2 +1,3 @@
 .DS_Store
-.zshrc.d/local
+.zshrc.d/local/*
+!.zshrc.d/local/README.md
