@@ -52,7 +52,7 @@ preexec_functions+=(_command_time_preexec)
 setopt prompt_subst
 PROMPT='%(?:%{$fg_bold[green]%}➜ :%{$fg_bold[red]%}➜ )'
 PROMPT+='${PROMPT_HOST}:'
-PROMPT+='%{$fg[cyan]%}$(shrink_path -f)%{$reset_color%} '
+PROMPT+='%{$fg[cyan]%}$(shrink_path -l -t)%{$reset_color%} '
 PROMPT+='$(git_prompt_info)'
 
 RPROMPT='$ZSH_COMMAND_TIME'
