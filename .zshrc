@@ -32,7 +32,7 @@ HYPHEN_INSENSITIVE="true"
 # st: open Sublime Text, optionally with a given file or directory
 # stt: open Sublime Text on the current directory.
 # sst: if sudo is available, open Sublime Text with root permissions
-plugins=(sublime sudo colored-man-pages shrink-path )
+plugins=(sublime sudo colored-man-pages shrink-path zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 
